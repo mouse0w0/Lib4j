@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.mouse0w0</groupId>
-	<artifactId>lib4j</artifactId>
-	<version>1.0.0</version>
-	<packaging>jar</packaging>
+	<artifactId>lib4j-parent</artifactId>
+	<version>${lib4j.parent.version}</version>
+	<packaging>pom</packaging>
 
 	<name>Lib4j</name>
 
@@ -15,7 +15,16 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+		<lib4j.parent.version>1.0.0</lib4j.parent.version>
 	</properties>
+
+	<modules>
+		<module>lib4j-all</module>
+		<module>lib4j-common</module>
+		<module>lib4j-compress</module>
+		<module>lib4j-collection</module>
+		<module>lib4j-io</module>
+	</modules>
 
 	<repositories>
 		<repository>
