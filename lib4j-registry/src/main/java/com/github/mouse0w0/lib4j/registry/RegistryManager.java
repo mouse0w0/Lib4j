@@ -22,11 +22,10 @@ public interface RegistryManager {
 
 	/**
 	 * Register a new registry into this manager
-	 * 
-	 * @param type The type for this register contains, one type should not be registered twice.
+	 *
 	 * @param registry The registry we want to register
 	 */
-	<T extends RegistryEntry<T>> void addRegistry(@Nonnull Registry<T> registry);
+	<T extends RegistryEntry<T>> void addRegistry(@Nonnull Class<T> type, @Nonnull Registry<T> registry);
 	
 	Collection<Entry<Class<?>, Registry<?>>> getEntries();
 	
