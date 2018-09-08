@@ -22,7 +22,7 @@ public abstract class ObservableValueBase<T> implements ObservableValue<T> {
 
     protected void fireValueChangeEvent(T oldValue, T newValue) {
         for (ChangeListener<T> listener : changeListeners) {
-            listener.onChange(this, oldValue, newValue);
+            listener.onChanged(this, oldValue, newValue);
         }
     }
 }
