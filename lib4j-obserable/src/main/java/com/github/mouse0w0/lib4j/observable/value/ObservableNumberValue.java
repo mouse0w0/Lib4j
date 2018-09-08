@@ -1,6 +1,6 @@
 package com.github.mouse0w0.lib4j.observable.value;
 
-public interface ObservableNumberValue extends ObservableValue<Number> {
+public interface ObservableNumberValue<T extends Number> extends ObservableValue<T> {
 
     byte getByte();
 
