@@ -26,6 +26,7 @@
 		<module>lib4j-io</module>
 		<module>lib4j-registry</module>
 		<module>lib4j-obserable</module>
+		<module>lib4j-eventbus</module>
 	</modules>
 
 	<repositories>
