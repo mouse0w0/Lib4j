@@ -15,7 +15,8 @@ public class SimpleRegistryManager implements RegistryManager {
     @Nullable
     @Override
     public <T extends RegistryEntry<T>> Registry<T> getRegistry(@Nonnull Class<T> type) {
-        Registry<T> registry = (Registry<T>)registries.get(type);
+        Objects.requireNonNull(type, "Type cannot be null");
+        Registry<T> registry = (Registry<T>) registries.get(type);
         if(registry == null) {
             registry = new SimpleRegistry<>();
             addRegistry(type, registry);
@@ -24,12 +25,14 @@ public class SimpleRegistryManager implements RegistryManager {
     }
 
     @Override
-    public <T extends RegistryEntry<T>> boolean hasRegistry(@Nonnull Class<T> type) {
+    public <T extends RegistryEntry<T>> boolean hasRegistry(Class<T> type) {
         return registries.containsKey(type);
     }
 
     @Override
     public <T extends RegistryEntry<T>> void addRegistry(@Nonnull Class<T> type, @Nonnull Registry<T> registry) {
+        Objects.requireNonNull(type, "Type cannot be null");
+        Objects.requireNonNull(registry, "Registry cannot be null");
         registries.put(registry.getRegistryEntryType(), registry);
     }
 
@@ -40,6 +43,6 @@ public class SimpleRegistryManager implements RegistryManager {
 
     @Override
     public <T extends RegistryEntry<T>> void register(@Nonnull T obj) {
-        getRegistry(obj.getRegistryType()).register(Objects.requireNonNull(obj));
+        getRegistry(obj.getRegistryType()).register(Objects.requireNonNull(obj, "Obj cannot be null"));
     }
 }

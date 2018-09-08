@@ -14,13 +14,21 @@ public class SimpleRegistry<T extends RegistryEntry<T>> implements Registry<T> {
     private final TypeToken<T> token = new TypeToken<T>(getClass()) {
     };
 
-    private final BiMap<NamespacedKey, T> registeredItems = HashBiMap.create();
-    private final BiMap<Integer, T> idToRegisteredItems = HashBiMap.create();
-    private final BiMap<NamespacedKey, Integer> keyToId = HashBiMap.create();
-    
+    protected final BiMap<NamespacedKey, T> registeredItems = HashBiMap.create();
+    protected final BiMap<Integer, T> idToRegisteredItems = HashBiMap.create();
+    protected final BiMap<NamespacedKey, Integer> keyToId = HashBiMap.create();
+
+    private final BiMap<NamespacedKey, Integer> defaultKeyToId;
+
     private int nextId = 0;
 
     public SimpleRegistry() {
+        this(HashBiMap.create(0));
+    }
+
+    public SimpleRegistry(BiMap<NamespacedKey, Integer> defaultKeyToId) {
+        this.defaultKeyToId = defaultKeyToId;
+        this.nextId = defaultKeyToId.size() == 0 ? 0 : defaultKeyToId.values().stream().mapToInt(Integer::intValue).max().getAsInt() + 1; // Initial next id.
     }
 
     @SuppressWarnings("unchecked")
@@ -36,9 +44,15 @@ public class SimpleRegistry<T extends RegistryEntry<T>> implements Registry<T> {
             throw new RegisterException("\"" + key + "\" has been registered.");
 
         registeredItems.put(key, obj);
-        idToRegisteredItems.put(nextId, obj);
-        keyToId.put(key, nextId);
-        nextId++;
+        if (defaultKeyToId.containsKey(key)) {
+            int id = defaultKeyToId.get(key);
+            idToRegisteredItems.put(id, obj);
+            keyToId.put(key, id);
+        } else {
+            idToRegisteredItems.put(nextId, obj);
+            keyToId.put(key, nextId);
+            nextId++;
+        }
         return obj;
     }
 
