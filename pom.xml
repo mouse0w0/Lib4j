@@ -5,7 +5,7 @@
 
 	<groupId>com.github.mouse0w0</groupId>
 	<artifactId>lib4j-parent</artifactId>
-	<version>${lib4j.parent.version}</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<name>Lib4j</name>
@@ -15,7 +15,6 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-		<lib4j.parent.version>1.0.0</lib4j.parent.version>
 	</properties>
 
 	<modules>
