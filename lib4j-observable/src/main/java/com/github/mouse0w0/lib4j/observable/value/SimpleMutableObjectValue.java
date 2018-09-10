@@ -29,17 +29,17 @@ public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implemen
 
             @Override
             public T getValue() {
-                return this.getValue();
+                return SimpleMutableObjectValue.this.getValue();
             }
 
             @Override
-            public void addChangeListener(ChangeListener<T> listener) {
-                this.addChangeListener(listener);
+            public void addChangeListener(ChangeListener<? super T> listener) {
+                SimpleMutableObjectValue.this.addChangeListener(listener);
             }
 
             @Override
-            public void removeChangeListener(ChangeListener<T> listener) {
-                this.removeChangeListener(listener);
+            public void removeChangeListener(ChangeListener<? super T> listener) {
+                SimpleMutableObjectValue.this.removeChangeListener(listener);
             }
         };
     }

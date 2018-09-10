@@ -49,12 +49,12 @@ public class SimpleMutableBooleanValue extends ObservableValueBase<Boolean> impl
         }
 
         @Override
-        public void addChangeListener(ChangeListener<Boolean> listener) {
+        public void addChangeListener(ChangeListener<? super Boolean> listener) {
             SimpleMutableBooleanValue.this.addChangeListener(listener);
         }
 
         @Override
-        public void removeChangeListener(ChangeListener<Boolean> listener) {
+        public void removeChangeListener(ChangeListener<? super Boolean> listener) {
             SimpleMutableBooleanValue.this.removeChangeListener(listener);
         }
     }

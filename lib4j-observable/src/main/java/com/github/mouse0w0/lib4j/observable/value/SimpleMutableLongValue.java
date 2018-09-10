@@ -109,12 +109,12 @@ public class SimpleMutableLongValue extends ObservableValueBase<Long> implements
         }
 
         @Override
-        public void addChangeListener(ChangeListener<Long> listener) {
+        public void addChangeListener(ChangeListener<? super Long> listener) {
             SimpleMutableLongValue.this.addChangeListener(listener);
         }
 
         @Override
-        public void removeChangeListener(ChangeListener<Long> listener) {
+        public void removeChangeListener(ChangeListener<? super Long> listener) {
             SimpleMutableLongValue.this.removeChangeListener(listener);
         }
     }

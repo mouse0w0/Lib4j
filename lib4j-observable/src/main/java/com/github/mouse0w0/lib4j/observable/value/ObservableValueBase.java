@@ -6,22 +6,22 @@ import java.util.Objects;
 
 public abstract class ObservableValueBase<T> implements ObservableValue<T> {
 
-    private final List<ChangeListener<T>> changeListeners = new LinkedList<>();
+    private final List<ChangeListener<? super T>> changeListeners = new LinkedList<>();
 
     @Override
-    public void addChangeListener(ChangeListener<T> listener) {
+    public void addChangeListener(ChangeListener<? super T> listener) {
         Objects.requireNonNull(listener);
         changeListeners.add(listener);
     }
 
     @Override
-    public void removeChangeListener(ChangeListener<T> listener) {
+    public void removeChangeListener(ChangeListener<? super T> listener) {
         Objects.requireNonNull(listener);
         changeListeners.remove(listener);
     }
 
     protected void fireValueChangeEvent(T oldValue, T newValue) {
-        for (ChangeListener<T> listener : changeListeners) {
+        for (ChangeListener<? super T> listener : changeListeners) {
             listener.onChanged(this, oldValue, newValue);
         }
     }

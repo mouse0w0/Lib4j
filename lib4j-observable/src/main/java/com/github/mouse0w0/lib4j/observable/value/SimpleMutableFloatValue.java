@@ -109,12 +109,12 @@ public class SimpleMutableFloatValue extends ObservableValueBase<Float> implemen
         }
 
         @Override
-        public void addChangeListener(ChangeListener<Float> listener) {
+        public void addChangeListener(ChangeListener<? super Float> listener) {
             SimpleMutableFloatValue.this.addChangeListener(listener);
         }
 
         @Override
-        public void removeChangeListener(ChangeListener<Float> listener) {
+        public void removeChangeListener(ChangeListener<? super Float> listener) {
             SimpleMutableFloatValue.this.removeChangeListener(listener);
         }
     }
