@@ -28,11 +28,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.mouse0w0</groupId>
-			<artifactId>lib4j-eventbus</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.mouse0w0</groupId>
 			<artifactId>lib4j-io</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
@@ -44,6 +39,11 @@
 		<dependency>
 			<groupId>com.github.mouse0w0</groupId>
 			<artifactId>lib4j-registry</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.mouse0w0</groupId>
+			<artifactId>lib4j-structure</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>

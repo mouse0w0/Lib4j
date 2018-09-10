@@ -9,5 +9,5 @@
         <artifactId>lib4j-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>lib4j-eventbus</artifactId>
+	<artifactId>lib4j-structure</artifactId>
 </project>

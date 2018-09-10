@@ -33,12 +33,12 @@ public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implemen
             }
 
             @Override
-            public void addChangeListener(ChangeListener<? super T> listener) {
+            public void addChangeListener(ValueChangeListener<? super T> listener) {
                 SimpleMutableObjectValue.this.addChangeListener(listener);
             }
 
             @Override
-            public void removeChangeListener(ChangeListener<? super T> listener) {
+            public void removeChangeListener(ValueChangeListener<? super T> listener) {
                 SimpleMutableObjectValue.this.removeChangeListener(listener);
             }
         };

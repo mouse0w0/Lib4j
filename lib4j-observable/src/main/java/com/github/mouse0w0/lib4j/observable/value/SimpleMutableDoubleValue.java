@@ -109,12 +109,12 @@ public class SimpleMutableDoubleValue extends ObservableValueBase<Double> implem
         }
 
         @Override
-        public void addChangeListener(ChangeListener<? super Double> listener) {
+        public void addChangeListener(ValueChangeListener<? super Double> listener) {
             SimpleMutableDoubleValue.this.addChangeListener(listener);
         }
 
         @Override
-        public void removeChangeListener(ChangeListener<? super Double> listener) {
+        public void removeChangeListener(ValueChangeListener<? super Double> listener) {
             SimpleMutableDoubleValue.this.removeChangeListener(listener);
         }
     }

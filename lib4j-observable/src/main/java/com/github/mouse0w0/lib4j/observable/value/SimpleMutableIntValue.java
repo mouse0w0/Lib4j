@@ -109,12 +109,12 @@ public class SimpleMutableIntValue extends ObservableValueBase<Integer> implemen
         }
 
         @Override
-        public void addChangeListener(ChangeListener<? super Integer> listener) {
+        public void addChangeListener(ValueChangeListener<? super Integer> listener) {
             SimpleMutableIntValue.this.addChangeListener(listener);
         }
 
         @Override
-        public void removeChangeListener(ChangeListener<? super Integer> listener) {
+        public void removeChangeListener(ValueChangeListener<? super Integer> listener) {
             SimpleMutableIntValue.this.removeChangeListener(listener);
         }
     }

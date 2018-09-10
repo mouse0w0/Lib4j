@@ -6,7 +6,7 @@ public interface ObservableValue<T> extends Observable {
 
     T getValue();
 
-    void addChangeListener(ChangeListener<? super T> listener);
+    void addChangeListener(ValueChangeListener<? super T> listener);
 
-    void removeChangeListener(ChangeListener<? super T> listener);
+    void removeChangeListener(ValueChangeListener<? super T> listener);
 }
