@@ -26,6 +26,7 @@
 		<module>lib4j-registry</module>
 		<module>lib4j-observable</module>
 		<module>lib4j-structure</module>
+		<module>lib4j-service</module>
 	</modules>
 
 	<repositories>
