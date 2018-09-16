@@ -28,19 +28,13 @@ public interface RegistryEntry<T> {
         @SuppressWarnings("unchecked")
         @Override
         public final T setRegistryName(NamespacedKey location) {
-            if (this.location != null) throw new Error("Duplicated register");
+            if (this.location != null) throw new IllegalStateException("Duplicated register");
             this.location = location;
             return (T) this;
         }
 
         public final T setRegistryName(String domain, String path) {
             return setRegistryName(new NamespacedKey(domain, path));
-        }
-
-        public final T setRegistryName(String path) {
-            throw new UnsupportedOperationException();
-            //TODO:
-            //return setRegistryName(new ResourceLocation(domain, path));
         }
 
         @SuppressWarnings("unchecked")
