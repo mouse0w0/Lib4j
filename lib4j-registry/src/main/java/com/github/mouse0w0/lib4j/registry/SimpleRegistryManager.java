@@ -18,7 +18,13 @@ public class SimpleRegistryManager implements RegistryManager {
         Objects.requireNonNull(type, "Type cannot be null");
         Registry<T> registry = (Registry<T>) registries.get(type);
         if(registry == null) {
-            registry = new SimpleRegistry<>();
+            registry = new RegistryBase<T>() {
+                int nextId = 0;
+                @Override
+                protected int nextId() {
+                    return nextId++;
+                }
+            };
             addRegistry(type, registry);
         }
         return registry;
