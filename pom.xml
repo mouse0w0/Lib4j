@@ -28,7 +28,8 @@
 		<module>lib4j-structure</module>
 		<module>lib4j-service</module>
 		<module>lib4j-resource</module>
-	</modules>
+        <module>lib4j-i18n</module>
+    </modules>
 
 	<repositories>
 		<repository>
