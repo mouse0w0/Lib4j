@@ -16,11 +16,11 @@ public class NamespacedKey {
         this.path = path;
     }
 
-    public NamespacedKey(@Nonnull String resource) {
-        if(Strings.isNullOrEmpty(resource))
-        	throw new IllegalArgumentException("Resource couldn't be null or empty");
+    public NamespacedKey(@Nonnull String namespacedKey) {
+        if(Strings.isNullOrEmpty(namespacedKey))
+        	throw new IllegalArgumentException("NamespacedKey couldn't be null or empty");
 
-        String args[] = resource.split(":", 2);
+        String args[] = namespacedKey.split(":", 2);
         if (args.length < 2) {
             this.domain = "";
             this.path = args[0];

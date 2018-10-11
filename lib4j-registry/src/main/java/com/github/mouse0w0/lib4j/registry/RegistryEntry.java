@@ -8,7 +8,7 @@ public interface RegistryEntry<T> {
 
     Class<T> getRegistryType();
 
-    T setRegistryName(NamespacedKey location);
+    T setRegistryName(NamespacedKey key);
 
     default T setRegistryName(String name) {
         return setRegistryName(new NamespacedKey(name));
@@ -31,9 +31,9 @@ public interface RegistryEntry<T> {
 
         @SuppressWarnings("unchecked")
         @Override
-        public final T setRegistryName(NamespacedKey location) {
+        public final T setRegistryName(NamespacedKey key) {
             if (this.key != null) throw new IllegalStateException("Duplicated register");
-            this.key = location;
+            this.key = key;
             return (T) this;
         }
 
