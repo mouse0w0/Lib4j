@@ -38,7 +38,7 @@ public abstract class RegistryBase<T extends RegistryEntry<T>> implements Regist
             throw new RegisterException("\"" + key + "\" has been registered.");
 
         registeredItems.put(key, obj);
-        
+
         Integer id = nextId(obj);
         idToRegisteredItems.put(id, obj);
         keyToId.put(key, id);
