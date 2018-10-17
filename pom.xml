@@ -29,6 +29,7 @@
 		<module>lib4j-service</module>
 		<module>lib4j-resource</module>
         <module>lib4j-i18n</module>
+        <module>event</module>
     </modules>
 
 	<repositories>
