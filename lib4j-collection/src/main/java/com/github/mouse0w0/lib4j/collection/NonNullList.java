@@ -34,13 +34,13 @@ public class NonNullList<E> extends AbstractList<E> {
 
     @Override
     public E set(int index, E element) {
-        Objects.requireNonNull(element);
+        Objects.requireNonNull(element, "Element cannot be null.");
         return list.set(index, element);
     }
 
     @Override
     public void add(int index, E element) {
-        Objects.requireNonNull(element);
+        Objects.requireNonNull(element, "Element cannot be null.");
         list.add(index, element);
     }
 
