@@ -1,0 +1,23 @@
+package com.github.mouse0w0.lib4j;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class CompositeEventHandler<T extends Event> implements EventHandler<T> {
+
+    private final List<EventHandler<T>> eventHandlers = new LinkedList<>();
+
+    public List<EventHandler<T>> getEventHandlers() {
+        return eventHandlers;
+    }
+
+    @Override
+    public void onEvent(T event) {
+        for(EventHandler<T> eventHandler : eventHandlers)
+            eventHandler.onEvent(event);
+    }
+
+    void onRawEvent(Event event) {
+        onEvent((T)event);
+    }
+}

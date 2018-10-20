@@ -1,0 +1,34 @@
+package com.github.mouse0w0.lib4j;
+
+import java.util.LinkedList;
+
+public class EventDispatchChainImpl implements EventDispatchChain {
+
+    private LinkedList<EventDispatcher> eventDispatchers = new LinkedList<>();
+
+    @Override
+    public EventDispatchChain append(EventDispatcher eventDispatcher) {
+        eventDispatchers.addLast(eventDispatcher);
+        return this;
+    }
+
+    @Override
+    public EventDispatchChain prepend(EventDispatcher eventDispatcher) {
+        eventDispatchers.addFirst(eventDispatcher);
+        return this;
+    }
+
+    @Override
+    public Event dispatchEvent(Event event) {
+        for (EventDispatcher eventDispatcher : eventDispatchers) {
+            if (!event.isConsumed()) {
+                eventDispatcher.dispatchEvent(event, this);
+            }
+        }
+        return event;
+    }
+
+    public void reset() {
+        eventDispatchers.clear();
+    }
+}
