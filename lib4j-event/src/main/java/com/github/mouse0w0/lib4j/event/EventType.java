@@ -1,4 +1,4 @@
-package com.github.mouse0w0.lib4j;
+package com.github.mouse0w0.lib4j.event;
 
 import java.util.Map;
 import java.util.Objects;
