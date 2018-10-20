@@ -11,5 +11,11 @@
 
     <artifactId>lib4j-event</artifactId>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

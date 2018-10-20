@@ -11,5 +11,11 @@
 
     <artifactId>lib4j-i18n</artifactId>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

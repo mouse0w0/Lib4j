@@ -72,7 +72,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>1.4</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -81,9 +81,11 @@
 						</goals>
 						<configuration>
 							<createSourcesJar>true</createSourcesJar>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<promoteTransitiveDependencies>true</promoteTransitiveDependencies>
 							<artifactSet>
 								<includes>
-									<include>${project.groupId}:*:*</include>
+									<include>${project.parent.groupId}:*:*</include>
 								</includes>
 							</artifactSet>
 						</configuration>

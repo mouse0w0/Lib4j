@@ -10,4 +10,11 @@
 		<version>1.0.0</version>
 	</parent>
 	<artifactId>lib4j-io</artifactId>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
