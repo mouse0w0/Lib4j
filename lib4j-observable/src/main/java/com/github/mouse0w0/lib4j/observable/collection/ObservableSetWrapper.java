@@ -19,7 +19,6 @@ public class ObservableSetWrapper<E> extends AbstractSet<E> implements Observabl
 
     @Override
     public void removeChangeListener(SetChangeListener<? super E> listener) {
-        Objects.requireNonNull(listener);
         changeListeners.remove(listener);
     }
 
