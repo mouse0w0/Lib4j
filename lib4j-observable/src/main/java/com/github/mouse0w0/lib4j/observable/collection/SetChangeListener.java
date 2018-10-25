@@ -5,7 +5,7 @@ public interface SetChangeListener<E> {
 
     void onChanged(Change<E> change);
 
-    public static abstract class Change<E> {
+    abstract class Change<E> {
 
         private final ObservableSet<E> set;
 

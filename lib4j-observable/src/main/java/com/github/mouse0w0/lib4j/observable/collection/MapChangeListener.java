@@ -1,10 +1,11 @@
 package com.github.mouse0w0.lib4j.observable.collection;
 
+@FunctionalInterface
 public interface MapChangeListener<K, V> {
 
     void onChanged(Change<K, V> change);
 
-    public static abstract class Change<K, V> {
+    abstract class Change<K, V> {
 
         private final ObservableMap<K, V> map;
 
