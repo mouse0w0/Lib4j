@@ -28,7 +28,7 @@ public class PropertiesI18n extends I18nBase {
         if (unfoundI18n.contains(locale))
             return localize(unlocalizedKey);
 
-        return loadedI18n.getOrDefault(locale, DefaultI18n.INSTANCE).localize(locale, unlocalizedKey);
+        return loadedI18n.getOrDefault(locale, defaultI18n).localize(locale, unlocalizedKey);
     }
 
     @Override
