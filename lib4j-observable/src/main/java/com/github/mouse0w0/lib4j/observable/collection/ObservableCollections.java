@@ -9,8 +9,8 @@ public final class ObservableCollections {
     private ObservableCollections() {
     }
 
-    public static <E> ObservableList observableList(List<E> list) {
-        return list instanceof RandomAccess ? new ObservableRandomAccessListWrapper(list) : new ObservableListWrapper(list);
+    public static <E> ObservableList<E> observableList(List<E> list) {
+        return list instanceof RandomAccess ? new ObservableRandomAccessListWrapper<>(list) : new ObservableListWrapper<>(list);
     }
 
     public static <E> ObservableSet<E> observableSet(Set<E> set) {
