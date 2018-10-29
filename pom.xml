@@ -5,7 +5,7 @@
 
     <groupId>com.github.mouse0w0</groupId>
     <artifactId>lib4j-parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
 
     <name>Lib4j</name>
@@ -30,6 +30,7 @@
         <module>lib4j-resource</module>
         <module>lib4j-i18n</module>
         <module>lib4j-event</module>
+        <module>lib4j-property</module>
     </modules>
 
     <repositories>

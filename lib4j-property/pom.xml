@@ -9,7 +9,7 @@
         <artifactId>lib4j-parent</artifactId>
         <version>1.0.2</version>
     </parent>
-    <artifactId>lib4j-resource</artifactId>
+    <artifactId>lib4j-property</artifactId>
     <build>
         <plugins>
             <plugin>
