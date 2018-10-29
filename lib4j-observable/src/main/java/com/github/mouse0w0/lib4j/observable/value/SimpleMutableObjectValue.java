@@ -1,8 +1,11 @@
 package com.github.mouse0w0.lib4j.observable.value;
 
+import java.util.Optional;
+
 public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implements MutableValue<T> {
-    
+
     private T value;
+    private ImmutableObjectValue immutableValue;
 
     public SimpleMutableObjectValue() {
     }
@@ -11,11 +14,15 @@ public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implemen
         this.value = value;
     }
 
+    public Optional<T> get() {
+        return Optional.ofNullable(getValue());
+    }
+
     @Override
     public T getValue() {
         return value;
     }
-    
+
     @Override
     public void setValue(T value) {
         T oldValue = this.value;
@@ -25,22 +32,26 @@ public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implemen
 
     @Override
     public ObservableValue<T> toImmutable() {
-        return new ObservableValue<T>() {
+        if (immutableValue == null) {
+            immutableValue = new ImmutableObjectValue();
+        }
+        return immutableValue;
+    }
 
-            @Override
-            public T getValue() {
-                return SimpleMutableObjectValue.this.getValue();
-            }
+    private class ImmutableObjectValue implements ObservableValue<T> {
+        @Override
+        public T getValue() {
+            return SimpleMutableObjectValue.this.getValue();
+        }
 
-            @Override
-            public void addChangeListener(ValueChangeListener<? super T> listener) {
-                SimpleMutableObjectValue.this.addChangeListener(listener);
-            }
+        @Override
+        public void addChangeListener(ValueChangeListener<? super T> listener) {
+            SimpleMutableObjectValue.this.addChangeListener(listener);
+        }
 
-            @Override
-            public void removeChangeListener(ValueChangeListener<? super T> listener) {
-                SimpleMutableObjectValue.this.removeChangeListener(listener);
-            }
-        };
+        @Override
+        public void removeChangeListener(ValueChangeListener<? super T> listener) {
+            SimpleMutableObjectValue.this.removeChangeListener(listener);
+        }
     }
 }
