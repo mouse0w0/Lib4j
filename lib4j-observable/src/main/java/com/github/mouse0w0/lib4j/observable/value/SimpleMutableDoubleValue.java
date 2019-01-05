@@ -7,6 +7,13 @@ public class SimpleMutableDoubleValue extends ObservableValueBase<Double> implem
     private double value;
     private ImmutableDoubleValue immutableDoubleValue;
 
+    public SimpleMutableDoubleValue() {
+    }
+
+    public SimpleMutableDoubleValue(double value) {
+        this.value = value;
+    }
+
     @Override
     public void set(double value) {
         double oldValue = this.value;

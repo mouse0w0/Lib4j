@@ -7,6 +7,13 @@ public class SimpleMutableBooleanValue extends ObservableValueBase<Boolean> impl
     private boolean value;
     private ImmutableBooleanValue immutableBooleanValue;
 
+    public SimpleMutableBooleanValue() {
+    }
+
+    public SimpleMutableBooleanValue(boolean value) {
+        this.value = value;
+    }
+
     @Override
     public void setValue(Boolean value) {
         Objects.requireNonNull(value);

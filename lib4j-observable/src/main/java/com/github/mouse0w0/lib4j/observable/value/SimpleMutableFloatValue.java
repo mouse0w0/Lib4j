@@ -7,6 +7,13 @@ public class SimpleMutableFloatValue extends ObservableValueBase<Float> implemen
     private float value;
     private ImmutableFloatValue immutableFloatValue;
 
+    public SimpleMutableFloatValue() {
+    }
+
+    public SimpleMutableFloatValue(float value) {
+        this.value = value;
+    }
+
     @Override
     public void set(float value) {
         float oldValue = this.value;

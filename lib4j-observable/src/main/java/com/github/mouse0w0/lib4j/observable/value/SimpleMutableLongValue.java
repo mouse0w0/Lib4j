@@ -7,6 +7,13 @@ public class SimpleMutableLongValue extends ObservableValueBase<Long> implements
     private long value;
     private ImmutableLongValue immutableLongValue;
 
+    public SimpleMutableLongValue() {
+    }
+
+    public SimpleMutableLongValue(long value) {
+        this.value = value;
+    }
+
     @Override
     public void set(long value) {
         long oldValue = this.value;

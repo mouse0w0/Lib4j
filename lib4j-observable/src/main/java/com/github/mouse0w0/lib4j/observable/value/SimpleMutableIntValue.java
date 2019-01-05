@@ -7,6 +7,13 @@ public class SimpleMutableIntValue extends ObservableValueBase<Integer> implemen
     private int value;
     private ImmutableIntValue immutableIntValue;
 
+    public SimpleMutableIntValue() {
+    }
+
+    public SimpleMutableIntValue(int value) {
+        this.value = value;
+    }
+
     @Override
     public void set(int value) {
         int oldValue = this.value;
