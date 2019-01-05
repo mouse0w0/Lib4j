@@ -16,6 +16,9 @@ public class SimpleMutableLongValue extends ObservableValueBase<Long> implements
 
     @Override
     public void set(long value) {
+        if (this.value == value) {
+            return;
+        }
         long oldValue = this.value;
         this.value = value;
         fireValueChangeEvent(oldValue, value);
@@ -29,7 +32,7 @@ public class SimpleMutableLongValue extends ObservableValueBase<Long> implements
 
     @Override
     public ObservableLongValue toImmutable() {
-        if(immutableLongValue == null)
+        if (immutableLongValue == null)
             immutableLongValue = new ImmutableLongValue();
         return immutableLongValue;
     }

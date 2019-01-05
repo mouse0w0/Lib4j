@@ -16,6 +16,9 @@ public class SimpleMutableFloatValue extends ObservableValueBase<Float> implemen
 
     @Override
     public void set(float value) {
+        if (Float.compare(this.value, value) == 0) {
+            return;
+        }
         float oldValue = this.value;
         this.value = value;
         fireValueChangeEvent(oldValue, value);

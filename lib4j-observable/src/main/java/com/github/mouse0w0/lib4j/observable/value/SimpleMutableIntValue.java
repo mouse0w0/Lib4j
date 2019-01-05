@@ -16,6 +16,9 @@ public class SimpleMutableIntValue extends ObservableValueBase<Integer> implemen
 
     @Override
     public void set(int value) {
+        if (this.value == value) {
+            return;
+        }
         int oldValue = this.value;
         this.value = value;
         fireValueChangeEvent(oldValue, value);

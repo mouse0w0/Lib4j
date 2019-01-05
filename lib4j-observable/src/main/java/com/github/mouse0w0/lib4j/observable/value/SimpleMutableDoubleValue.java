@@ -16,6 +16,9 @@ public class SimpleMutableDoubleValue extends ObservableValueBase<Double> implem
 
     @Override
     public void set(double value) {
+        if (Double.compare(this.value, value) == 0) {
+            return;
+        }
         double oldValue = this.value;
         this.value = value;
         fireValueChangeEvent(oldValue, value);

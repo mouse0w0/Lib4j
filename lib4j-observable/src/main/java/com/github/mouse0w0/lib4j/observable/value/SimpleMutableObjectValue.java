@@ -1,5 +1,6 @@
 package com.github.mouse0w0.lib4j.observable.value;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implements MutableValue<T> {
@@ -25,6 +26,9 @@ public class SimpleMutableObjectValue<T> extends ObservableValueBase<T> implemen
 
     @Override
     public void setValue(T value) {
+        if (Objects.equals(this.value, value)) {
+            return;
+        }
         T oldValue = this.value;
         this.value = value;
         fireValueChangeEvent(oldValue, value);

@@ -22,7 +22,7 @@ public class SimpleMutableBooleanValue extends ObservableValueBase<Boolean> impl
 
     @Override
     public ObservableBooleanValue toImmutable() {
-        if(immutableBooleanValue == null)
+        if (immutableBooleanValue == null)
             immutableBooleanValue = new ImmutableBooleanValue();
         return immutableBooleanValue;
     }
@@ -39,6 +39,9 @@ public class SimpleMutableBooleanValue extends ObservableValueBase<Boolean> impl
 
     @Override
     public void set(boolean value) {
+        if (this.value == value) {
+            return;
+        }
         boolean oldValue = this.value;
         this.value = value;
         fireValueChangeEvent(oldValue, value);
