@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class EventDispatchChainImpl implements EventDispatchChain {
 
-    private LinkedList<EventDispatcher> eventDispatchers = new LinkedList<>();
+    private final LinkedList<EventDispatcher> eventDispatchers = new LinkedList<>();
 
     @Override
     public EventDispatchChain append(EventDispatcher eventDispatcher) {
