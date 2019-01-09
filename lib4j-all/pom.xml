@@ -53,7 +53,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.mouse0w0</groupId>
-			<artifactId>lib4j-resource</artifactId>
+			<artifactId>lib4j-annotation</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.mouse0w0</groupId>
+			<artifactId>lib4j-binding</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>

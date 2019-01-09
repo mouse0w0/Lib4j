@@ -27,10 +27,11 @@
         <module>lib4j-observable</module>
         <module>lib4j-structure</module>
         <module>lib4j-service</module>
-        <module>lib4j-resource</module>
         <module>lib4j-i18n</module>
         <module>lib4j-event</module>
         <module>lib4j-property</module>
+        <module>lib4j-annotation</module>
+        <module>lib4j-binding</module>
     </modules>
 
     <repositories>
