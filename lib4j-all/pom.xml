@@ -58,22 +58,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.mouse0w0</groupId>
-			<artifactId>lib4j-binding</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.mouse0w0</groupId>
 			<artifactId>lib4j-i18n</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.mouse0w0</groupId>
 			<artifactId>lib4j-event</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.mouse0w0</groupId>
-			<artifactId>lib4j-property</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
