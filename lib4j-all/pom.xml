@@ -33,11 +33,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.mouse0w0</groupId>
-			<artifactId>lib4j-observable</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.mouse0w0</groupId>
 			<artifactId>lib4j-registry</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
