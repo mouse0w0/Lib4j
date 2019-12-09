@@ -1,6 +1,7 @@
 package com.github.mouse0w0.lib4j.event;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class EventType<T extends Event> {
@@ -10,7 +11,7 @@ public class EventType<T extends Event> {
     private final String name;
     private final EventType<? super T> superType;
 
-    private Map<EventType<? extends T>, Void> childType;
+    private List<EventType<?>> childTypes;
 
     private EventType() {
         this.name = "Event";
@@ -24,6 +25,7 @@ public class EventType<T extends Event> {
     public EventType(String name, EventType<? super T> superType) {
         this.name = name;
         this.superType = Objects.requireNonNull(superType, "SuperType cannot be null.");
+        this.superType.addChildType(this);
     }
 
     public EventType<? super T> getSuperType() {
@@ -32,6 +34,11 @@ public class EventType<T extends Event> {
 
     public String getName() {
         return name;
+    }
+
+    private void addChildType(EventType<? extends T> childType) {
+        if (childTypes == null) childTypes = new ArrayList<>();
+        childTypes.add(childType);
     }
 
     @Override
