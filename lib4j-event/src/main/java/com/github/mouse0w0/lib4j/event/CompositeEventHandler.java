@@ -13,11 +13,13 @@ public class CompositeEventHandler<T extends Event> implements EventHandler<T> {
 
     @Override
     public void onEvent(T event) {
-        for(EventHandler<T> eventHandler : eventHandlers)
+        for (EventHandler<T> eventHandler : eventHandlers) {
             eventHandler.onEvent(event);
+            if (event.isConsumed()) return;
+        }
     }
 
     void onRawEvent(Event event) {
-        onEvent((T)event);
+        onEvent((T) event);
     }
 }

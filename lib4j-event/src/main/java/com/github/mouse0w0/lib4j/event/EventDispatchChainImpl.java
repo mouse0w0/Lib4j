@@ -21,9 +21,7 @@ public class EventDispatchChainImpl implements EventDispatchChain {
     @Override
     public Event dispatchEvent(Event event) {
         for (EventDispatcher eventDispatcher : eventDispatchers) {
-            if (!event.isConsumed()) {
-                eventDispatcher.dispatchEvent(event, this);
-            }
+            eventDispatcher.dispatchEvent(event, this);
         }
         return event;
     }
