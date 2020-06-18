@@ -24,10 +24,8 @@
         <module>lib4j-collection</module>
         <module>lib4j-io</module>
         <module>lib4j-registry</module>
-        <module>lib4j-observable</module>
         <module>lib4j-structure</module>
         <module>lib4j-service</module>
-        <module>lib4j-i18n</module>
         <module>lib4j-event</module>
         <module>lib4j-annotation</module>
     </modules>
