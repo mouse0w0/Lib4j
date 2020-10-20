@@ -1,0 +1,10 @@
+dependencies {
+  compile project(':lib4j-collection')
+  compile project(':lib4j-compress')
+  compile project(':lib4j-io')
+  compile project(':lib4j-registry')
+  compile project(':lib4j-structure')
+  compile project(':lib4j-service')
+  compile project(':lib4j-annotation')
+  compile project(':lib4j-event')
+}
